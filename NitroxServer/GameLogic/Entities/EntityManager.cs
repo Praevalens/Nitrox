@@ -35,6 +35,39 @@ namespace NitroxServer.GameLogic.Entities
             return entities;
         }
 
+        public Optional<Entity> GetEntityById(NitroxId id)
+        {
+            return entityData.GetEntityById(id);
+        }
+
+        public Optional<AbsoluteEntityCell> UpdateEntityGameObject(NitroxId id, byte[] serializedGameObject)
+        {
+            Optional<Entity> opEntity = entityData.GetEntityById(id);
+
+            if (opEntity.IsPresent())
+            {
+                Entity entity = opEntity.Get();
+                AbsoluteEntityCell oldCell = entity.AbsoluteEntityCell;
+
+                entity.SerializedGameObject = serializedGameObject;
+
+                AbsoluteEntityCell newCell = entity.AbsoluteEntityCell;
+
+                if (oldCell != newCell)
+                {
+                    entityData.EntitySwitchedCells(entity, oldCell, newCell);
+                }
+
+                return Optional<AbsoluteEntityCell>.Of(newCell);
+            }
+            else
+            {
+                Log.Info("Could not update gameobject because it was not found (maybe it was recently picked up)");
+            }
+
+            return Optional<AbsoluteEntityCell>.Empty();
+        }
+
         public Optional<AbsoluteEntityCell> UpdateEntityPosition(NitroxId id, Vector3 position, Quaternion rotation)
         {
             Optional<Entity> opEntity = entityData.GetEntityById(id);

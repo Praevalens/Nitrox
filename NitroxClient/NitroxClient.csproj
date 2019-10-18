@@ -68,8 +68,10 @@
   <ItemGroup>
     <Compile Include="ClientAutoFacRegistrar.cs" />
     <Compile Include="Communication\PacketReceiver.cs" />
+    <Compile Include="Communication\Packets\Processors\PickupItemProcessor.cs" />
     <Compile Include="Communication\Packets\Processors\RadioPlayPendingMessageProcessor.cs" />
     <Compile Include="Communication\Packets\Processors\ExosuitArmActionProcessor.cs" />
+    <Compile Include="GameLogic\Helper\ItemDeployingGUIHand.cs" />
     <Compile Include="GameLogic\InitialSync\CyclopsInitialAsyncProcessor.cs" />
     <Compile Include="GameLogic\InitialSync\StorageSlotsInitialSyncProcessor.cs" />
     <Compile Include="GameLogic\InitialSync\StoryGoalInitialSyncProcessor.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="GameLogic\InitialSync\GlobalRootInitialSyncProcessor.cs" />
     <Compile Include="GameLogic\InitialSync\PlayerInitialSyncProcessor.cs" />
     <Compile Include="GameLogic\InitialSync\EscapePodInitialSyncProcessor.cs" />
+    <Compile Include="GameLogic\DeployableItem.cs" />
     <Compile Include="GameLogic\PlayerModel\Equipment\ScubaSuitVisibiliyHandler.cs" />
     <Compile Include="GameLogic\StorageSlots.cs" />
     <Compile Include="MonoBehaviours\NitroxIdentifier.cs" />
@@ -179,7 +182,7 @@
     <Compile Include="Communication\Packets\Processors\PDAScannerEntryRemoveProcessor.cs" />
     <Compile Include="Communication\Packets\Processors\PDAScannerEntryProgressProcessor.cs" />
     <Compile Include="Communication\Packets\Processors\PDAScannerEntryAddProcessor.cs" />
-    <Compile Include="Communication\Packets\Processors\PickupItemProcessor.cs" />
+    <Compile Include="Communication\Packets\Processors\DeployItemProcessor.cs" />
     <Compile Include="Communication\Packets\Processors\PlaceBasePieceProcessor.cs" />
     <Compile Include="Communication\Packets\Processors\PlayerDeathProcessor.cs" />
     <Compile Include="Communication\Packets\Processors\PlayerJoinedMultiplayerSessionProcessor.cs" />

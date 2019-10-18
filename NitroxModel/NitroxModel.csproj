@@ -100,6 +100,7 @@
     <Compile Include="Logger\InGameLogger.cs" />
     <Compile Include="Networking\NitroxDeliveryMethod.cs" />
     <Compile Include="Packets\BedEnter.cs" />
+    <Compile Include="Packets\DeployItem.cs" />
     <Compile Include="Packets\EscapePodRadioRepair.cs" />
     <Compile Include="Packets\EscapePodRepair.cs" />
     <Compile Include="Packets\PlayerEquipmentAdded.cs" />

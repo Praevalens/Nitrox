@@ -12,7 +12,7 @@ namespace NitroxClient.GameLogic
 {
     public class Item
     {
-        private readonly IPacketSender packetSender;
+        protected readonly IPacketSender packetSender;
 
         public Item(IPacketSender packetSender)
         {
@@ -52,7 +52,7 @@ namespace NitroxClient.GameLogic
             packetSender.Send(droppedItem);
         }
 
-        private Optional<NitroxId> GetCurrentWaterParkId()
+        protected Optional<NitroxId> GetCurrentWaterParkId()
         {
             Player player = Utils.GetLocalPlayer().GetComponent<Player>();
 

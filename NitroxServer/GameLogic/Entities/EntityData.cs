@@ -59,6 +59,7 @@ namespace NitroxServer.GameLogic.Entities
 
         public void AddEntity(Entity entity)
         {
+            //Log.Error("Adding entity!");
             lock (entitiesById)
             {
                 entitiesById.Add(entity.Id, entity);

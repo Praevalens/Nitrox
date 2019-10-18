@@ -68,6 +68,7 @@ namespace NitroxClient
             containerBuilder.RegisterType<Entities>().InstancePerLifetimeScope();
             containerBuilder.RegisterType<MedkitFabricator>().InstancePerLifetimeScope();
             containerBuilder.RegisterType<Item>().InstancePerLifetimeScope();
+            containerBuilder.RegisterType<DeployableItem>().InstancePerLifetimeScope();
             containerBuilder.RegisterType<EquipmentSlots>().InstancePerLifetimeScope();
             containerBuilder.RegisterType<ItemContainers>().InstancePerLifetimeScope();
             containerBuilder.RegisterType<StorageSlots>().InstancePerLifetimeScope();

@@ -67,7 +67,7 @@ namespace NitroxServer.Serialization.World
             try
             {
                 PersistedWorldData persistedData;
-
+                Log.Info("Trying to open: " + config.SaveName + ".nitrox");
                 using (Stream stream = File.OpenRead(config.SaveName + ".nitrox"))
                 {
                     persistedData = serializer.Deserialize<PersistedWorldData>(stream);
@@ -75,6 +75,10 @@ namespace NitroxServer.Serialization.World
 
                 if (persistedData == null || !persistedData.IsValid())
                 {
+                    if (persistedData == null)
+                    {
+                        Log.Info("Not able to read: " + config.SaveName + ".nitrox");
+                    }
                     throw new InvalidDataException("Persisted state is not valid");
                 }
                 

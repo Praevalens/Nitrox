@@ -55,6 +55,17 @@ namespace NitroxServer.Serialization.World
                 return false;
             }
 
+            Log.Error("" + (ParsedBatchCells != null));
+            Log.Error("" + (ServerStartTime != null));
+            Log.Error("" + (BaseData != null));
+            Log.Error("" + (VehicleData != null));
+            Log.Error("" + (InventoryData != null));
+            Log.Error("" + (GameData != null));
+            Log.Error("" + (PlayerData != null));
+            Log.Error("" + (EntityData != null));
+            Log.Error("" + (EntityData.SerializableEntitiesById.Count > 0));
+            Log.Error("" + (EscapePodData != null));
+
             return (ParsedBatchCells != null) &&
                    (ServerStartTime != null) &&
                    (BaseData != null) &&
