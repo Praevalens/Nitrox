@@ -81,7 +81,6 @@ namespace NitroxServer.Serialization.World
                     }
                     throw new InvalidDataException("Persisted state is not valid");
                 }
-                
 
                 World world = CreateWorld(persistedData.ServerStartTime,
                                           persistedData.EntityData,
